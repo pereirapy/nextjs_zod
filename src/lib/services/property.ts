@@ -1,7 +1,11 @@
 import { defaultRevalidate, urlListJson } from '@/config/constants';
-import { Property } from '@/types/property';
+import {
+  GetPropertiesResponse,
+  GetPropertyResponse,
+  Property,
+} from '@/types/property';
 
-export const getProperties = async () => {
+export const getProperties = async (): Promise<GetPropertiesResponse> => {
   try {
     const result = await fetch(urlListJson, {
       next: { revalidate: defaultRevalidate },
@@ -29,7 +33,9 @@ export const getProperties = async () => {
   }
 };
 
-export const getOneProperty = async (id: string) => {
+export const getOneProperty = async (
+  id: string,
+): Promise<GetPropertyResponse> => {
   try {
     if (!id) {
       return {

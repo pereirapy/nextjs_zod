@@ -1,3 +1,4 @@
+import { cn } from '@/utils/cn';
 import React from 'react';
 import {
   Controller,
@@ -26,13 +27,16 @@ const LabelWithInput = ({
   field,
   formState,
 }: LabelWithInputProps & ReactHookFormsProps) => {
-  const inputClassName="block w-full rounded-md border-0 py-1.5 pl-1 pr-1 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+  const inputClassName =
+    'block w-full rounded-md border-0 py-1.5 pl-1 pr-1 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6';
 
   return (
     <div className="pb-1">
       <label
         htmlFor={name}
-        className={`block text-sm font-medium leading-6 text-gray-900 ${formState.errors[name]?.message && 'text-red-600'}`}>
+        className={cn(`block text-sm font-medium leading-6 text-gray-900`, {
+          'text-red-600': formState.errors[name]?.message,
+        })}>
         {label}
       </label>
       <div className="relative mt-2 rounded-md shadow-sm">

@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import Button from '@/components/button';
 import { Loading } from '@/components/loading';
@@ -174,7 +174,7 @@ const Search = ({ data, setDataFiltered }: SearchProps) => {
           <Button onClick={handleSearch}>Search</Button>
           <Button
             onClick={resetSearch}
-            className='ml-2'
+            className="ml-2"
             color="green">
             Reset
           </Button>

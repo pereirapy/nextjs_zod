@@ -5,7 +5,7 @@ import HeartSVG from '@/components/heart-svg';
 import ContactAgent from './contact-agent/contact-agent';
 import { Property } from '@/types/property';
 import Modal from '@/components/modal';
-import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import {
   restorePropertyAsFavorite,
   savePropertyAsFavorite,
@@ -55,7 +55,7 @@ const ModalBodyContent = () => {
       <table className="">
         <thead>
           <tr>
-            <th style={{width: '75%'}}>Title</th>
+            <th style={{ width: '75%' }}>Title</th>
             <th>Link</th>
           </tr>
         </thead>

@@ -6,8 +6,7 @@ import { ContactAgentSchema, contactAgentSchema } from './schema';
 import { useState } from 'react';
 
 const ContactAgent = () => {
-const [showSendOk, setShowSendOk] = useState(false);
-
+  const [showSendOk, setShowSendOk] = useState(false);
 
   const form = useForm<ContactAgentSchema>({
     resolver: zodResolver(contactAgentSchema),
@@ -15,7 +14,7 @@ const [showSendOk, setShowSendOk] = useState(false);
   });
 
   const handleContact = (formData: ContactAgentSchema) => {
-    console.log({formData})
+    console.log({ formData });
     setShowSendOk(true);
   };
   return (
@@ -48,9 +47,11 @@ const [showSendOk, setShowSendOk] = useState(false);
           label="Comments *"
           placeHolder="Please write your Comments"
         />
-        {showSendOk && <p className='text-green-600'>Message sent successfully</p>}
+        {showSendOk && (
+          <p className="text-green-600">Message sent successfully</p>
+        )}
         <div className="text-center mt-4">
-          <Button type='submit'>Contact Now</Button>
+          <Button type="submit">Contact Now</Button>
         </div>
       </form>
     </div>

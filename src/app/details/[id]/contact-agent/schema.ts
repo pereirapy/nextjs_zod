@@ -1,5 +1,4 @@
-import { z } from "zod";
-
+import { z } from 'zod';
 
 export const contactAgentSchema = z.object({
   fullName: z.string(),

@@ -3,6 +3,7 @@ import { formatNumberToUSD } from '@/utils/formatNumberToUSD';
 import { routes } from '@/config/routes';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '@/components/button';
 
 type ListCardProps = {
   data: Property;
@@ -22,12 +23,11 @@ const Card = ({ data }: ListCardProps) => {
           <p className="text-lg min-h-[56px]">{data.Title}</p>
           <p className="text-base text-slate-500">{data.Location}</p>
           <p className="text-sm text-slate-400">
-            {data.Bedrooms} beds | {data.Bathrooms} baths
+            {data.Bedrooms} beds | {data.Bathrooms} baths | {data.Parking}{' '}
+            parking
           </p>
           <p className="my-1">{formatNumberToUSD(data['Sale Price'])}</p>
-          <button className="px-3 py-2 text-white bg-blue-400 border border-slate-500 hover:bg-blue-500">
-            View Details
-          </button>
+          <Button type="button">View Details</Button>
         </div>
       </div>
     </Link>

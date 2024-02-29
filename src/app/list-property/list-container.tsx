@@ -12,7 +12,6 @@ type ListContainerProps = {
 };
 
 const ListContainer = ({ data, error }: ListContainerProps) => {
-
   const dataOrderedById = data.sort(sortById);
   const [dataFiltered, setDataFiltered] = useState(dataOrderedById);
 
@@ -23,7 +22,9 @@ const ListContainer = ({ data, error }: ListContainerProps) => {
         setDataFiltered={setDataFiltered}
       />
       <div className="flex flex-wrap gap-x-4 gap-y-8 place-content-center">
-        {!error && dataFiltered.length === 0 && <div className="text-red-500 text-lg">No data</div>}
+        {!error && dataFiltered.length === 0 && (
+          <div className="text-red-500 text-lg">No data</div>
+        )}
         {error && data.length === 0 ? (
           <h1 className="text-red-500 text-lg">{String(error)}</h1>
         ) : (

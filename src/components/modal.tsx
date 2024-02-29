@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 type ModalProps = {
   title: string | ReactNode;
   body: string | ReactNode;
-  setClose: () => void
+  setClose: () => void;
 };
 
 const Modal = ({ title, body, setClose }: ModalProps) => {
@@ -30,7 +30,9 @@ const Modal = ({ title, body, setClose }: ModalProps) => {
           {body}
 
           <div className="mt-4 flex justify-end">
-            <button onClick={() => setClose()} className="modal-close px-4 bg-gray-100 p-3 rounded-lg text-black hover:bg-gray-200">
+            <button
+              onClick={() => setClose()}
+              className="modal-close px-4 bg-gray-100 p-3 rounded-lg text-black hover:bg-gray-200">
               Close
             </button>
           </div>

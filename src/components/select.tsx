@@ -1,15 +1,25 @@
-import { ChangeEvent, ChangeEventHandler, DetailedHTMLProps, SelectHTMLAttributes } from "react";
+import { ChangeEvent } from 'react';
 
 type SelectWithLabelProps = {
   label: string;
   name: string;
   options: { value: string; label: string }[];
-  value:string| number;
-  onChange: (e: ChangeEvent<HTMLSelectElement>) => void
+  value: string | number;
+  onChange: (_e: ChangeEvent<HTMLSelectElement>) => void;
 };
-export const SelectWithLabel = ({ label, options, name, value, onChange }: SelectWithLabelProps) => (
+export const SelectWithLabel = ({
+  label,
+  options,
+  name,
+  value,
+  onChange,
+}: SelectWithLabelProps) => (
   <div>
-    <label className="mr-2" htmlFor={label}>{label}</label>
+    <label
+      className="mr-2"
+      htmlFor={label}>
+      {label}
+    </label>
     <select
       id={label}
       name={name}

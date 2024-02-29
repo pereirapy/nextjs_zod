@@ -19,7 +19,8 @@ const PropertySpecName = ({
   name: string;
   className: string;
 }) => (
-  <div className={`text-[12px] text-gray-400 mt-2 lg:mb-2 lg:mt-0 ${className}`}>
+  <div
+    className={`text-[12px] text-gray-400 mt-2 lg:mb-2 lg:mt-0 ${className}`}>
     {name}
   </div>
 );
@@ -30,11 +31,9 @@ const options: Intl.DateTimeFormatOptions = {
   day: 'numeric',
 };
 
-const PropertyDetails = ({ data }: {data: Property}) => {
-
+const PropertyDetails = ({ data }: { data: Property }) => {
   if (!data) return <div className="text-lg text-red-500">NO data</div>;
 
-  
   const dateListed = new Intl.DateTimeFormat('en-US', options).format(
     new Date(data.DateListed),
   );
@@ -50,14 +49,14 @@ const PropertyDetails = ({ data }: {data: Property}) => {
           <div className="text-sm text-gray-400">Data Listed: {dateListed}</div>
         </div>
       </div>
-      <div className='flex justify-center items-center bg-[#AAF4EE]'>
-      <Image
-        src={data.PictureURL}
-        alt={data.Title}
-        width={350}
-        height={350}
-        className="w-full max-w-[350px]"
-      />
+      <div className="flex justify-center items-center bg-[#AAF4EE]">
+        <Image
+          src={data.PictureURL}
+          alt={data.Title}
+          width={350}
+          height={350}
+          className="w-full max-w-[350px]"
+        />
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-5 auto-rows-min gap-y border-2 text-center">
         <PropertySpecNumber
